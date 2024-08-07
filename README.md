@@ -40,4 +40,11 @@ Flask is designed to normally require the config to be available at startup (eg 
 key, other environment specifications). Flask has a config object that can hold the loaded configuration values; this 
 is the config attribute of the Flask object
 
+### Debug mode in Config. 
+Documentation recommends setting Debug mode at runtime rather than hard coding it into the config.py.
+Therefore, debug setting removed from config.py.
+```bash
+flask --app hello run --debug
+```
+
 ## Logging
