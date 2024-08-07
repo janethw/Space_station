@@ -41,7 +41,7 @@ key, other environment specifications). Flask has a config object that can hold 
 is the config attribute of the Flask object
 
 ### Debug mode in Config. 
-Documentation recommends setting Debug mode at runtime rather than hard coding it into the config.py.
+Documentation recommends setting Debug mode at runtime using 'flask run' rather than hard coding it into the config.py.
 Therefore, debug setting removed from config.py.
 ```bash
 flask --app hello run --debug

@@ -10,7 +10,7 @@ def create_app():
     app.config.from_object(DevelopmentConfig)
 
     # Load the Flask session secret key
-    app.config.update(DevelopmentConfig.SECRET_KEY)
+    app.config.update(SECRET_KEY=DevelopmentConfig.SECRET_KEY)
 
     # Set up the logging, connect the db, register blueprints/routes...
 
