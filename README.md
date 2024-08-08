@@ -32,6 +32,13 @@ can import the greetings module and use the functions within it.
 Article on Why use __init__.py is here: 
 https://sarangsurve.medium.com/python-basics-why-use-init-py-c88589e44c91#:~:text=__init__.py%20allows,foundation%20for%20your%20packages'%20functionality.
 
+- __init__.py sets up the following:
+
+    -- creates Flask instance
+    -- loads db Dev config
+    -- loads Flask secret key
+    -- TO DO: set up logging, connect db, register blueprints
+
 ## Config file
 Configuration handling in Flask is explained here: 
 https://flask.palletsprojects.com/en/3.0.x/config/
