@@ -13,10 +13,13 @@ import logging
 # TO DO: set up the logger for the Flask app
 
 
-def logger_setup():
+def setup_logger(name):
+    # Get logger specified by the name argument in __init__.py
+    logger = logging.getLogger(name)
+
     # Configure Flask logging
     # Set log level to INFO
-    app.logger.setLevel(logging.INFO)
+    logger.setLevel(logging.INFO)
     # Log to a file
     handler = logging.FileHandler('app.log')
-    app.logger.addHandler(handler)
+    logger.addHandler(handler)
