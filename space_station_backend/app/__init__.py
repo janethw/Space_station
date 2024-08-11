@@ -16,6 +16,9 @@ def create_app():
     # Set up logging
     logger = setup_logger('app')
 
+    # Test log
+    logger.info('App started')
+
     # Connect the db, register blueprints/routes...
 
     # Return the fully set-up app

@@ -13,13 +13,19 @@ import logging
 # TO DO: set up the logger for the Flask app
 
 
+# In Python, standard loggers are, in general, created and accessed using the getLogger function
+# in the logging module.
 def setup_logger(name):
     # Get logger specified by the name argument in __init__.py
     logger = logging.getLogger(name)
 
-    # Configure Flask logging
+    # Add the handler if the logger doesn't already have one (to avoid duplicate entries)
     # Set log level to INFO
-    logger.setLevel(logging.INFO)
-    # Log to a file
-    handler = logging.FileHandler('app.log')
-    logger.addHandler(handler)
+    if not logger.handlers:
+        logger.setLevel(logging.INFO)
+        # Log to a file
+        handler = logging.FileHandler('app.log')
+        logger.addHandler(handler)
+
+    # return the configured logger is best practice
+    return logger
