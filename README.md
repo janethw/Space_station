@@ -55,3 +55,7 @@ flask --app hello run --debug
 ```
 
 ## Logging
+logging.getLogger(name) could be called a conditional instantiation. It either creates
+a new instance of a logger or, if a logger with the same name already exists, it 
+gives you than existing instance. For this reason, will often say, we are 'retrieving' a 
+logger with getLogger(name).

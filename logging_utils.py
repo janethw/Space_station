@@ -1,5 +1,5 @@
 import logging
-
+from logging.handlers import RotatingFileHandler
 
 # LOGGING IN FLASK
 # Use the app.logger object once the Flask app is set up
@@ -13,7 +13,7 @@ import logging
 # TO DO: set up the logger for the Flask app
 
 
-# In Python, standard loggers are, in general, created and accessed using the getLogger function
+# In Python, standard loggers are created and accessed using the getLogger function
 # in the logging module.
 def setup_logger(name):
     # Get logger specified by the name argument in __init__.py
@@ -24,7 +24,7 @@ def setup_logger(name):
     if not logger.handlers:
         logger.setLevel(logging.INFO)
         # Log to a file
-        handler = logging.FileHandler('app.log')
+        handler = logging.handlers.RotatingFileHandler('app.log', maxBytes=10000, backupCount=1)
         logger.addHandler(handler)
 
     # return the configured logger is best practice
