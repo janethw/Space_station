@@ -63,7 +63,12 @@ logger with getLogger(name).
 Real python logging as main reference: 
 https://realpython.com/python-logging/
 
+### Default format for root logger using basicConfig()
+Log outputs can be formated using basicConfig() at the root logger level. Default output doesn't need to be specified,
+but is equivalent to: logging.basicConfig(format="{levelname):{name}:{message}", style="{")
+
+### Setting level for root logger using basicConfig()
 basicConfig() can be called to change the configurations for the root logger. If basicConfig() not explicitly
 configured, the default is basicConfig() is called without parameters. You can only configure basicConfig() to 
 configure the root logger if it hasn't been previously called. Eg, if logging.info() has been called, you can
-no longer configure the root logger with basicConfig()
+no longer configure the root logger with basicConfig().
