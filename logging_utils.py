@@ -4,6 +4,9 @@ from logging.handlers import RotatingFileHandler
 
 # Set up configuration for the root logger
 logging.basicConfig(
+    filename='app.log',  # sets the name of the file in which logs will be saved
+    encoding='utf-8',
+    filemode='a',  # 'a' means append
     level=logging.DEBUG,
     format="{asctime} - {levelname} - {message}",
     style="{",
