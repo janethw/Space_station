@@ -1,18 +1,8 @@
 import logging
 from logging.handlers import RotatingFileHandler
 
-# LOGGING IN FLASK
-# Use the app.logger object once the Flask app is set up
 
-# HANDLERS
-# The log handler sets out how a log is displayed or written.
-# two key fields in log handler are: log formatter, which gives context information
-# and the log level, which filters out logs of an inferior level.
-# Console display with StreamHandler, write to a file with FileHandler
-
-# TO DO: set up the logger for the Flask app
-
-# Set logging level to debug
+# Set up configuration for the root logger
 logging.basicConfig(
     level=logging.DEBUG,
     format="{asctime} - {levelname} - {message}",
@@ -25,6 +15,7 @@ logging.debug("This will get logged")
 # in the logging module.
 
 
+# Instantiate a logger called 'name' that uses the RotatingFileHandler
 def setup_logger(name):
     # Get logger specified by the name argument in __init__.py
     logger = logging.getLogger(name)
