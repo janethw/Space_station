@@ -12,9 +12,14 @@ from logging.handlers import RotatingFileHandler
 
 # TO DO: set up the logger for the Flask app
 
+# Set logging level to debug
+logging.basicConfig(level=logging.DEBUG)
+logging.debug("This will get logged")
 
 # In Python, standard loggers are created and accessed using the getLogger function
 # in the logging module.
+
+
 def setup_logger(name):
     # Get logger specified by the name argument in __init__.py
     logger = logging.getLogger(name)
