@@ -18,7 +18,7 @@ logging.debug("This will get logged")
 # in the logging module.
 
 
-# Instantiate a logger called 'name' that uses the RotatingFileHandler
+# Initialise a logger called 'name' that uses the RotatingFileHandler
 def setup_logger(name):
     # Get logger specified by the name argument in __init__.py
     logger = logging.getLogger(name)
