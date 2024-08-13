@@ -24,9 +24,9 @@ def setup_logger(name):
     logger = logging.getLogger(name)
 
     # Add the handler if the logger doesn't already have one (to avoid duplicate entries)
-    # Set log level to INFO
+    # Set log level to DEBUG
     if not logger.handlers:
-        logger.setLevel(logging.INFO)
+        logger.setLevel(logging.DEBUG)
         # Log to a file
         handler = logging.handlers.RotatingFileHandler('app.log', maxBytes=10000, backupCount=1)
         logger.addHandler(handler)
