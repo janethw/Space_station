@@ -1,6 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for
 from logging_utils import setup_logger
-from space_station_backend.app import create_app
+from flaskr import create_app
 
 # creates the Flask instance in the create_app function in __init__.py
 app = create_app()
