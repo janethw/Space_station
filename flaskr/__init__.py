@@ -4,6 +4,8 @@ from flask import Flask
 from instance.config import DevelopmentConfig
 from logging_utils import setup_logger
 
+print(os.getcwd())
+
 
 # create_app is the application factory function
 def create_app(test_config=None):
