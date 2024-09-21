@@ -100,7 +100,7 @@ def logout():
 
 
 # Require authentication in other views
-# This decorator returns a new view function that wraps the original view it's applied to.
+# This decorator returns a new view function. It wraps the original view it's applied to.
 # If user is not loaded returns to login page, else original view is called and continues normally.
 def login_required(view):
     @functools.wraps(view)
