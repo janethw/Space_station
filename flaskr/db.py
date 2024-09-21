@@ -36,8 +36,8 @@ def init_db():
     except Exception as e:
         # Print exceptions
         print(e)
-    finally:
-        db.commit()
+    # finally:
+    #     db.commit()
 
 
 @click.command('init-db')
