@@ -1,5 +1,6 @@
 from logging_utils import setup_logger
 from flaskr import create_app
+import os
 
 # creates the Flask instance in the create_app function in __init__.py
 app = create_app()

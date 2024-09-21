@@ -4,6 +4,8 @@ from flask import Flask
 from instance.config import DevelopmentConfig
 from logging_utils import setup_logger
 
+print(os.getcwd())
+
 
 # create_app is the application factory function
 def create_app(test_config=None):
@@ -12,7 +14,7 @@ def create_app(test_config=None):
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
-        app.config.from_object('DevelopmentConfig')
+        app.config.from_object(DevelopmentConfig)
     else:
         # load the test config if passed in
         app.config.from_mapping(test_config)
@@ -26,6 +28,10 @@ def create_app(test_config=None):
     # Import the init_app function from db.py and call it to register the db functions in db.py to the application
     from . import db
     db.init_app(app)
+
+    # Import and register the bp from the factory using app.register_blueprint()
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     # a simple page that says hello
     @app.route('/')
