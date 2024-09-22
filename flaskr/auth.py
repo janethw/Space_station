@@ -30,10 +30,15 @@ def register():
         if error is None:
             try:
                 db.execute(
-                    "INSERT INTO user (username, password) VALUE (?, ?)",
+                    "INSERT INTO user (username, password) VALUES (?, ?)",
                     (username, generate_password_hash(password))
                 )
                 db.commit()
+                # TO DELETE (Check that registration is writing to db)
+                # Fetch the user that was just registered
+                user = db.execute('SELECT * FROM user WHERE username = ?', (username,)
+                                  ).fetchone()
+                print(user['username'], user['password'])
             # A db IntegrityError will be raised if the username already exists
             except db.IntegrityError:
                 error = f"User {username} is already registered."
