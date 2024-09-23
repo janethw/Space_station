@@ -29,9 +29,15 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
-    # Import and register the bp from the factory using app.register_blueprint()
+    # Import and register the authentication bp from the factory using app.register_blueprint()
     from . import auth
     app.register_blueprint(auth.bp)
+
+    # Import and register the blog bp from the factory using app.register_blueprint()
+    from . import blog
+    app.register_blueprint(blog.bp)
+    # The blog is currently the main feature, so has no URL prefix and the index view will be a '/'
+    app.add_url_rule('/', endpoint='index')
 
     # a simple page that says hello
     @app.route('/')
